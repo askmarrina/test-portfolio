@@ -81,10 +81,10 @@ const PhotoWrapper = styled.div`
         z-index: -1;
 
         @media ${Theme.media.mobile} {
-            width: 314px;
-            height: 414px;
-            top: -17px;
-            left: 20px;
+            width: 300px;
+            height: 400px;
+            top: -30px;
+            left: 30px;
     }
 
         @media ${Theme.media.mobile} {

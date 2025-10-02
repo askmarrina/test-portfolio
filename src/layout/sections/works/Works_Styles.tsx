@@ -9,6 +9,12 @@ const Works = styled.section`
     ${FlexWrapper} {
         gap: 30px; 
     }
+
+    @media ${Theme.media.tablet} {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `
 
 const Work = styled.div`
@@ -29,6 +35,8 @@ const Work = styled.div`
     // @media  ${Theme.media.desktop} {
     //     max-width: 540px;
     // }
+    
+    
 `
 const ImageWrapper = styled.div`
     position: relative;
