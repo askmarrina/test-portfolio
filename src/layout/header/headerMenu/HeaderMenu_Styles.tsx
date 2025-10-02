@@ -3,13 +3,9 @@ import {Theme} from "../../../styles/Theme";
 import {Link} from "react-scroll";
 
 //Menu
-const NavLink = styled.a`
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    font-size: 30px;
-    
-    text-align: center;
-    color: transparent;
+
+const MenuItem = styled.li`
+    position: relative;
 `
 
 const Mask = styled.span`
@@ -22,6 +18,8 @@ const Mask = styled.span`
     
     color: ${Theme.colors.accent};
     
+    transition: ${Theme.animations.transition};
+    
     & + & {
         top: 50%;
         span {
@@ -31,30 +29,36 @@ const Mask = styled.span`
     }
 `
 
-const MenuItem = styled.li`
-    position: relative;
+const NavLink = styled<any>(Link)`
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
     
-    &::before {
+    text-align: center;
+    color: transparent;
+
+    &::before{
         content: '';
         display: inline-block;
         height: 3px;
         background-color: ${Theme.colors.accent};
-        
+
         position: absolute;
         top: 50%;
         left: -10px;
         right: -10px;
         z-index: 1;
-        
+
         transform: scale(0);
+        transition: ${Theme.animations.transition};
     }
-    
-    &:hover {
-        
+
+    &:hover, &.active {
+
         &::before {
             transform: scale(1);
         }
-        
+
         ${Mask} {
             transform: skewX(12deg) translateX(5px);
             color: ${Theme.colors.font};
@@ -62,10 +66,12 @@ const MenuItem = styled.li`
                 transform: skewX(12deg) translateX(-5px);
             }
         }
-        
-        
+
+
     }
 `
+
+
 
 // Mobile Menu
 
@@ -81,21 +87,33 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     bottom: 0;
     z-index: 99999;
     background-color: rgba(31, 31, 32, 0.9);
-    display: none;
     
-    ${props => props.isOpen && css<{isOpen: boolean}> `
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
+    
+    
     
     ul {
         display: flex;
-        gap: 30px;
+        gap: 10px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        
+        transition: 1s ease-in-out;
     }
+
+    ${props => props.isOpen && css<{isOpen: boolean}> `
+        transform: translateY(0);
+        
+        & ul {
+            gap: 40px;
+        }
+    `};
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`

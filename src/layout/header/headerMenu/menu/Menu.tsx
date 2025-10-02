@@ -30,7 +30,12 @@ export const Menu: React.FC = () => {
         <ul>
             {items.map((item, index) => {
                 return <S.MenuItem key={index}>
-                    <S.NavLink href={`#${item.href}`}>
+                    <S.NavLink to={item.href}
+                               smooth={true}
+                               activeClass='active'
+                               spy={true}
+                               offset={20}
+                    >
                         {item.title}
                         <S.Mask>
                                 <span>

@@ -14,9 +14,9 @@ const Works = styled.section`
 const Work = styled.div`
     background-color: ${Theme.colors.secondaryBg};
     
-    width: 330px;
-    
-    flex-grow: 1;
+    //width: 330px;
+    //
+    //flex-grow: 1;
     
     ${Link} {
         padding: 10px 0;
@@ -26,9 +26,9 @@ const Work = styled.div`
         }
     }
     
-    @media  ${Theme.media.desktop} {
-        max-width: 540px;
-    }
+    // @media  ${Theme.media.desktop} {
+    //     max-width: 540px;
+    // }
 `
 const ImageWrapper = styled.div`
     position: relative;
@@ -38,7 +38,8 @@ const ImageWrapper = styled.div`
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
+        transition: ${Theme.animations.transition};
         
         &::before {
             width: 100%;
@@ -54,7 +55,8 @@ const ImageWrapper = styled.div`
         bottom: 0;
         top: 0;
         background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(2px);
+        transition: ${Theme.animations.transition};
         opacity: 0;
     } 
     
@@ -63,7 +65,8 @@ const ImageWrapper = styled.div`
              opacity: 1;  
         }
         ${Button} {
-            opacity: 1
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
     }
     

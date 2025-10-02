@@ -22,19 +22,19 @@ export const Footer: React.FC = () => {
     return (
         <S.Footer>
             <FlexWrapper direction={'column'} align={'center'}>
-                <S.Name>Svetlana</S.Name>
+                <S.Name>Marina</S.Name>
                 <S.SocialList>
 
                     {socialItemsData.map((s, index) => {
                         return (
                             <S.SocialItem>
                                 <S.SocialLink>
-                                    <Icon height={'21px'} width={'21px'} viewBox={'0 0 21px 21px'} iconId={s.iconId}/>
+                                    <Icon height={'21'} width={'21'} viewBox={'0 0 21 21'} iconId={s.iconId}/>
                                 </S.SocialLink>
                             </S.SocialItem>)
                     })}
                 </S.SocialList>
-                <S.Copyright>© 2023 Svetlana Dyablo, All Rights Reserved.</S.Copyright>
+                <S.Copyright>© 2025 Marina K, All Rights Reserved.</S.Copyright>
             </FlexWrapper>
 
         </S.Footer>
