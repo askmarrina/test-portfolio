@@ -18,6 +18,10 @@ const Slide = (props: SLidePropsType) => {
 }
 
 const items = [
+    <Slide userName={'Илюшка Ожог'}
+           text={'Дааа, она всё-таки украсила мою жизнь...'}  />,
+    <Slide userName={'Ондрик Гарницкий'}
+           text={'Я так подумав, все ж таки я бiльше сiльпо нiж вона'}  />,
     <Slide userName={'ivan ivanow'}
            text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}  />,
     <Slide userName={'piort petrov'}
